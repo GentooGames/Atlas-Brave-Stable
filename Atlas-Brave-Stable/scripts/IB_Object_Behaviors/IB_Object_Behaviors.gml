@@ -57,7 +57,7 @@
 			log	 = method(_self, function(_string, _flags = IB_LOG_FLAG.NONE) {
 				iceberg.log(
 					"[" + object_get_name(object_index) + "] " + _string, 
-					IB_LOG_FLAG.INSTANCES | IB_LOG_FLAG.OBJECTS | _flags
+					IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.OBJECTS & _flags
 				);
 			});
 			core = {};
@@ -103,7 +103,7 @@
 		// public
 		initialize		= function() {
 			if (!is_initialized()) {
-				__.IB.log("initialize", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+				__.IB.log("initialize");
 				__.IB.lifecycle.initialize.flag = true;
 				__.IB.lifecycle.cleanup.flag	= false;
 				__.IB.lifecycle.initialize.execute();
@@ -113,7 +113,7 @@
 		activate		= function(_active = true) {
 			if (_active) {
 				if (is_initialized() && !is_active()) {
-					__.IB.log("activate", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+					__.IB.log("activate");
 					__.IB.lifecycle.activate.flag   = true;
 					__.IB.lifecycle.deactivate.flag = false;
 					__.IB.lifecycle.activate.execute();
@@ -124,7 +124,7 @@
 		};
 		deactivate		= function() {
 			if (is_initialized()) {
-				__.IB.log("deactivate", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+				__.IB.log("deactivate");
 				__.IB.lifecycle.activate.flag	= false;
 				__.IB.lifecycle.deactivate.flag = true;
 				__.IB.lifecycle.deactivate.execute();
@@ -135,7 +135,7 @@
 			if (is_initialized() && !is_destroyed()) {
 				__.IB.lifecycle.destroy.flag = true;
 				__.IB.lifecycle.destroy.execute();
-				__.IB.log("destroy", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+				__.IB.log("destroy");
 				if (_cleanup  ) cleanup();
 				if (_immediate) instance_destroy();
 			}
@@ -145,7 +145,7 @@
 			if (is_initialized() && !is_cleaned_up()) {
 				__.IB.lifecycle.cleanup.flag = true;
 				__.IB.lifecycle.cleanup.execute();
-				__.IB.log("cleanup", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+				__.IB.log("cleanup");
 			}
 			return self;
 		};
@@ -340,7 +340,7 @@
 		show			= function(_visible = true) {
 			if (_visible) {
 				if (is_initialized() && !is_visible()) {
-					__.IB.log("show", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+					__.IB.log("show");
 										 visible = true;
 					__.IB.render.visibility.flag = true;
 					__.IB.render.visibility.show.execute();
@@ -351,7 +351,7 @@
 		};
 		hide			= function() {
 			if (is_initialized() && is_visible()) {
-				__.IB.log("hide", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
+				__.IB.log("hide");
 									 visible = false;
 				__.IB.render.visibility.flag = false;
 				__.IB.render.visibility.hide.execute();
