@@ -9,9 +9,7 @@
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	// objc_game.create //
 	event_inherited();
-	
 	var _self = self;
-	var _data = self[$ "data"] ?? self;
 	
 	#region input
 		
@@ -62,7 +60,7 @@
 				owner: _self,
 			});
 				
-			fsm.add("__",							  game_state_base());
+			fsm.add		 ("__",						  game_state_base());
 			fsm.add_child("__", "begin",			  game_state_begin());
 			fsm.add_child("__", "idle",				  game_state_idle());
 			fsm.add_child("__", "create_controllers", game_state_create_controllers());
@@ -87,16 +85,6 @@
 			__.state.fsm.render_gui();
 		});
 		
-	#endregion
-	#region async
-	
-		// private
-		__[$ "async"] ??= {};
-		with (__.async) {};
-		
-		// events
-		on_cleanup(function() {});
-	
 	#endregion
 	
 	initialize();

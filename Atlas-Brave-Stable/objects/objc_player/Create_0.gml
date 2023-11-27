@@ -14,6 +14,9 @@
 	#region meta
 	
 		// public
+		profile_get    = function() {
+			return __.meta.profile;	
+		};
 		profile_create = function(_profile_name) {
 			
 			var _profile	= profile_get();
@@ -34,9 +37,6 @@
 			
 			__.IB.log("profile loaded: " + _profile_name, IB_LOG_FLAG.PLAYER);
 			return self;
-		};
-		profile_get    = function() {
-			return __.meta.profile;	
 		};
 			
 		team_get	   = function() {

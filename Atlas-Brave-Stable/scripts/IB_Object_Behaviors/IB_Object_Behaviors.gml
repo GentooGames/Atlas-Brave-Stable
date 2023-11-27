@@ -103,20 +103,20 @@
 		// public
 		initialize		= function() {
 			if (!is_initialized()) {
+				__.IB.log("initialize", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 				__.IB.lifecycle.initialize.flag = true;
 				__.IB.lifecycle.cleanup.flag	= false;
 				__.IB.lifecycle.initialize.execute();
-				__.IB.log("initialize");
 			}
 			return self;
 		};
 		activate		= function(_active = true) {
 			if (_active) {
 				if (is_initialized() && !is_active()) {
+					__.IB.log("activate", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 					__.IB.lifecycle.activate.flag   = true;
 					__.IB.lifecycle.deactivate.flag = false;
 					__.IB.lifecycle.activate.execute();
-					__.IB.log("activate");
 				}
 			}
 			else deactivate();
@@ -124,10 +124,10 @@
 		};
 		deactivate		= function() {
 			if (is_initialized()) {
+				__.IB.log("deactivate", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 				__.IB.lifecycle.activate.flag	= false;
 				__.IB.lifecycle.deactivate.flag = true;
 				__.IB.lifecycle.deactivate.execute();
-				__.IB.log("deactivate");
 			}
 			return self;
 		};
@@ -135,9 +135,9 @@
 			if (is_initialized() && !is_destroyed()) {
 				__.IB.lifecycle.destroy.flag = true;
 				__.IB.lifecycle.destroy.execute();
+				__.IB.log("destroy", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 				if (_cleanup  ) cleanup();
 				if (_immediate) instance_destroy();
-				__.IB.log("destroy");
 			}
 			return self;
 		};
@@ -145,7 +145,7 @@
 			if (is_initialized() && !is_cleaned_up()) {
 				__.IB.lifecycle.cleanup.flag = true;
 				__.IB.lifecycle.cleanup.execute();
-				__.IB.log("cleanup");
+				__.IB.log("cleanup", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 			}
 			return self;
 		};
@@ -340,10 +340,10 @@
 		show			= function(_visible = true) {
 			if (_visible) {
 				if (is_initialized() && !is_visible()) {
+					__.IB.log("show", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 										 visible = true;
 					__.IB.render.visibility.flag = true;
 					__.IB.render.visibility.show.execute();
-					__.IB.log("show");
 				}
 			}
 			else hide();
@@ -351,10 +351,10 @@
 		};
 		hide			= function() {
 			if (is_initialized() && is_visible()) {
+				__.IB.log("hide", IB_LOG_FLAG.OBJECTS & IB_LOG_FLAG.INSTANCES & IB_LOG_FLAG.STATE);
 									 visible = false;
 				__.IB.render.visibility.flag = false;
 				__.IB.render.visibility.hide.execute();
-				__.IB.log("hide");
 			}
 			return self;
 		};
