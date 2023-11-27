@@ -1,0 +1,27 @@
+
+	Garrett:
+		- Game Director
+		- Art Director
+		- Character Design
+		- Gameplay Programming
+	
+	Alex: 
+		- Lead Programmer
+		- Architectural Design
+		- Technical Programming
+		- Network Programming
+	
+	Jamie:
+		- Character Artist
+		- Technical Artist
+		- Debug Tools Programming
+	
+	Mossy:
+		- Environmental Artist
+	
+	Will:
+		- Environmental Artist
+	
+	FatBard:
+		- Audio
+

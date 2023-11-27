@@ -1,0 +1,12 @@
+global.hitbox_data = {};																			
+global.hitbox_data[$	"Bomb"	] = {	name :	"Bomb"	, target : 	TARGET_TYPE.ENEMY	, duration :	noone	, tick_rate : 	noone	, damage :	100	, buff : 	{}	, hit_dir :	HIT_DIR.RADIAL	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Caltraps"	] = {	name :	"Caltraps"	, target : 	TARGET_TYPE.ENEMY	, duration :	5	, tick_rate : 	noone	, damage :	30	, buff : 	{}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Net"	] = {	name :	"Net"	, target : 	TARGET_TYPE.ENEMY	, duration :	8	, tick_rate : 	1	, damage :	noone	, buff : 	{move_speed:40}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Web"	] = {	name :	"Web"	, target : 	TARGET_TYPE.ENEMY	, duration :	5	, tick_rate : 	1	, damage :	noone	, buff : 	{move_speed:25}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Basamus Poison Pool"	] = {	name :	"Basamus Poison Pool"	, target : 	TARGET_TYPE.ENEMY	, duration :	8	, tick_rate : 	30	, damage :	50	, buff : 	{}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Araaki Web"	] = {	name :	"Araaki Web"	, target : 	TARGET_TYPE.ENEMY	, duration :	8	, tick_rate : 	1	, damage :	noone	, buff : 	{move_speed:40}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Commander"	] = {	name :	"Commander"	, target : 	TARGET_TYPE.ALLY	, duration :	noone	, tick_rate : 	1	, damage :	noone	, buff : 	{damage:1}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Protector"	] = {	name :	"Protector"	, target : 	TARGET_TYPE.ALLY	, duration :	noone	, tick_rate : 	1	, damage :	noone	, buff : 	{damage_reduction:10}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Frost"	] = {	name :	"Frost"	, target : 	TARGET_TYPE.ENEMY	, duration :	5	, tick_rate : 	1	, damage :	noone	, buff : 	{move_speed:20}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}
+global.hitbox_data[$	"Fire"	] = {	name :	"Fire"	, target : 	TARGET_TYPE.ENEMY	, duration :	5	, tick_rate : 	60	, damage :	20	, buff : 	{}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.FIRE	}
+global.hitbox_data[$	"Thorns"	] = {	name :	"Thorns"	, target : 	TARGET_TYPE.ENEMY	, duration :	noone	, tick_rate : 	60	, damage :	5	, buff : 	{}	, hit_dir :	HIT_DIR.NONE	, damage_type : 	DAMAGE_TYPE.BASIC	}

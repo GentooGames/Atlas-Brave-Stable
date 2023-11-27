@@ -1,0 +1,16 @@
+
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+	//  ______  ______   _____    ______    //
+	// /\__  _\/\  __ \ /\  __-. /\  __ \   //
+	// \/_/\ \/\ \ \/\ \\ \ \/\ \\ \ \/\ \  //
+	//    \ \_\ \ \_____\\ \____- \ \_____\ //
+	//     \/_/  \/_____/ \/____/  \/_____/ //
+	//                                      //
+	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+	|-- need to define hitbox anchor point offsets for distended hitboxes?
+	|-- dealing damage with no knockback leaves viper stuck in hurt state
+	|-- figure out what to do with player.character_death() this relationship is weak. 
+	|	shouldnt be checking for player instance != undefined to do these methods.
+	|	should probably hook up to broadcast system
+	
+	
