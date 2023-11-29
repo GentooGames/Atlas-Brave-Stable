@@ -39,101 +39,10 @@
                 death: [],
             },
         }),
-        Arthur: new ICharacterConfig({
-            meta:   {
-                uid:  "Arthur",
-                name: "Arthur",
-                desc: "...",
-            },
-            sprite: {
-                full:      spr_Arthur_high_res,
-                portrait:  spr_Arthur_portrait,
-                nameplate: spr_Arthur_nameplate,
-				mask:	   spr_Arthur_collision,
-				hurtbox:   spr_Arthur_hurtbox,
-            },    
-            audio:  {
-                vocal: {
-                    rate:  0.6,
-                    voice: [
-                        sfx_Arthur_Attack_voice_1,
-                        sfx_Arthur_Attack_voice_2,
-                        sfx_Arthur_Attack_voice_3,
-                    ],
-                    hurt:  [
-                        sfx_Arthur_Hurt_voice_1,
-                        sfx_Arthur_Hurt_voice_2,
-                    ],
-                },
-                death: [],
-            },
-        }),
-		
-        Enzo: new ICharacterConfig({
-            meta:   {
-                uid:  "Enzo",
-                name: "Enzo",
-                desc: "...",
-            },
-            sprite: {
-                full:      spr_Enzo_high_res,
-                portrait:  spr_Enzo_portrait,
-                nameplate: spr_Enzo_nameplate,
-				mask:	   spr_Enzo_collision,
-				hurtbox:   spr_Enzo_hurtbox,
-            },    
-            audio:  {
-                vocal: {
-                    rate:  0.6,
-                    voice: [
-                        sfx_Enzo_Attack_charge_voice,
-                    ],
-                    hurt:  [
-                        sfx_Enzo_Hurt_voice_1,
-                        sfx_Enzo_Hurt_voice_2,
-                    ],
-                },
-                death: [],
-            },
-        }),	
-		
-	    kai: new ICharacterConfig({
-            meta:   {
-                type: "kai",
-                name: "Kai",
-                desc: "...",
-            },
-            sprite: {
-                full:      spr_Kai_high_res,
-                portrait:  spr_Kai_portrait,
-                nameplate: spr_Kai_nameplate,
-				mask:	   spr_Kai_collision,
-				hurtbox:   spr_Kai_hurtbox,
-            },    
-            audio:  {
-                vocal: {
-                    rate:  0.6,
-                    voice: [
-                        sfx_Kai_Attack_voice_1,
-                        sfx_Kai_Attack_voice_2,
-                        sfx_Kai_Attack_voice_3,
-                    ],
-                    hurt:  [
-                        sfx_Kai_Hurt_voice_1,
-                        sfx_Kai_Hurt_voice_2,
-                    ],
-                },
-                death: [],
-            },
-        }),	
-		
-		
 	};
 	
-
-	
 	global.hero_data_order = [
-		"Abel","Arthur","Enzo","Kai"
+		"Abel",
 	];
 	global.hero_count	   = array_length(global.hero_data_order);
 	
