@@ -143,8 +143,6 @@
 							#macro ABILITY_CONFIG global.ability_config
 							
 							Abel_Abilities_Init();
-							Arthur_Abilities_Init();
-							Enzo_Abilities_Init();
 							Viper_Abilities_Init();
 							Giblin_Footman_Abilities_Init();
 							
