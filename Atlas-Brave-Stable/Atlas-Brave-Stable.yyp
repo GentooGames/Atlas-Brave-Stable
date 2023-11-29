@@ -521,7 +521,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"sfx","folderPath":"folders/enemies/Tuvale/Viper/sfx.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"sprites","folderPath":"folders/enemies/Tuvale/Viper/sprites.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"attack","folderPath":"folders/enemies/Tuvale/Viper/sprites/attack.yy","order":7,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Extensions","folderPath":"folders/Extensions.yy","order":19,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"game","folderPath":"folders/game.yy","order":4,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"audio","folderPath":"folders/game/audio.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"music","folderPath":"folders/game/audio/music.yy","order":0,},
