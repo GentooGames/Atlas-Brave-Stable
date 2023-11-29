@@ -36,14 +36,6 @@
 			__.port_created_listener = iceberg.input.subscribe("port_created", __.port_created_event);
 			__.port_removed_listener = iceberg.input.subscribe("port_removed", __.port_removed_event);
 		});	
-		on_cleanup   (function() {
-			// should call this, but iceberg gets cleaned up 
-			// beforehand so this will crash
-			// -- iceberg.input.unsubscribe(__.port_activated_listener  );
-			// -- iceberg.input.unsubscribe(__.port_deactivated_listener);
-			// -- __.port_activated_listener   = undefined;
-			// -- __.port_deactivated_listener = undefined;
-		});
 	
 	#endregion
 	#region player
@@ -63,11 +55,6 @@
 			return _player;
 		};
 		player_remove			= function(_port_index, _destroy = true) {
-			// removing a player will cause issues with how player
-			// index assigned. since player_index is just the struct 
-			// count, removing player 0 will result in the next 
-			// player_create() assigning an id that already exists, 
-			// overridding existing player_index.
 		
 			var _player = __.players.get_items(_port_index);
 			__.players.remove(_port_index);
