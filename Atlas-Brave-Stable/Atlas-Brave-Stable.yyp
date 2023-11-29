@@ -327,7 +327,6 @@
     {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},"order":3,},
     {"id":{"name":"BehaviorTreeNodeCondition","path":"scripts/BehaviorTreeNodeCondition/BehaviorTreeNodeCondition.yy",},"order":5,},
     {"id":{"name":"spr_Viper_Attack_smear","path":"sprites/spr_Viper_Attack_smear/spr_Viper_Attack_smear.yy",},"order":1,},
-    {"id":{"name":"Kai_Abilities","path":"scripts/Kai_Abilities/Kai_Abilities.yy",},"order":0,},
     {"id":{"name":"spr_Abel_shadow","path":"sprites/spr_Abel_shadow/spr_Abel_shadow.yy",},"order":6,},
     {"id":{"name":"sfx_Spider_Attack_windup","path":"sounds/sfx_Spider_Attack_windup/sfx_Spider_Attack_windup.yy",},"order":1,},
     {"id":{"name":"sfx_Arthur_Earthbreaker_smash_voice","path":"sounds/sfx_Arthur_Earthbreaker_smash_voice/sfx_Arthur_Earthbreaker_smash_voice.yy",},"order":13,},

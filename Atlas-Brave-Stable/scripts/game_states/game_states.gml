@@ -145,8 +145,6 @@
 							Abel_Abilities_Init();
 							Arthur_Abilities_Init();
 							Enzo_Abilities_Init();
-							Kai_Abilities_Init();
-							Kai_Abilities_Init();
 							Viper_Abilities_Init();
 							Giblin_Footman_Abilities_Init();
 							
