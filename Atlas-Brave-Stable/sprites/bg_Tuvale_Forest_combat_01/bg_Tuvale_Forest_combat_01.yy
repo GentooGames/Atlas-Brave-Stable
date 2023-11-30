@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "01",
-    "path": "folders/rooms/Tuvale Forest/combat/01.yy",
+    "name": "rooms",
+    "path": "folders/rooms.yy",
   },
 }
