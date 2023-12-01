@@ -737,9 +737,9 @@
 					fsm.add_child("locked", "ability", character_state_ability());
 					
 			// triggers
-			fsm.add_transition("t_idle",			"free", "idle",		method(_self, character_state_trigger_idle));
-			fsm.add_transition("t_move",			"idle", "move",		method(_self, character_state_trigger_move));
-			fsm.add_transition("t_ability",			"free", "ability",	method(_self, character_state_trigger_ability));
+			fsm.add_transition("t_idle",	 "free", "idle",	method(_self, character_state_trigger_idle));
+			fsm.add_transition("t_move",	 "idle", "move",	method(_self, character_state_trigger_move));
+			fsm.add_transition("t_ability",	 "free", "ability",	method(_self, character_state_trigger_ability));
 					
 			// hooks
 			fsm.on("state changed", method(_self, function(_data) {

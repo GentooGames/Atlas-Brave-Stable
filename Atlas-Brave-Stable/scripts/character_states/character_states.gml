@@ -25,7 +25,6 @@
 			animation_end: function() {},
 		};
 	};
-	
 	/*---*/function character_state_actions_free() {
 			//  ______  ______   ______   ______    //
 			// /\  ___\/\  == \ /\  ___\ /\  ___\   //
@@ -163,7 +162,6 @@
 						},
 					};
 				};
-	
 	/*----*/function character_state_actions_locked() {
 				//  __       ______   ______   __  __   ______   _____    //
 				// /\ \     /\  __ \ /\  ___\ /\ \/ /  /\  ___\ /\  __-.  //
