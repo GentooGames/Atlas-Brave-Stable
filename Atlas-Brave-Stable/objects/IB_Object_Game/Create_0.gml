@@ -13,6 +13,14 @@
 	
 	var _self = self;
 	
+	#region log
+	
+		// public
+		log = function(_string, _log_flags = IB_LOG_FLAG.NONE) {
+			__.IB.log(_string, IB_LOG_FLAG.GAME & _log_flags);	
+		};
+	
+	#endregion
 	#region input
 		
 		// private
@@ -20,12 +28,12 @@
 			port_created_event	  = method(_self, function(_data) {
 				var _port_index = _data.payload;
 				player_create(_port_index);
-				__.IB.log("player_created on port: " + string(_port_index));
+				log("player_created on port: " + string(_port_index));
 			});
 			port_removed_event	  = method(_self, function(_data) {
 				var _port_index = _data.payload;
 				player_remove(_port_index, true); // destroy player
-				__.IB.log("player_destroyed on port: " + string(_port_index));
+				log("player_destroyed on port: " + string(_port_index));
 			});
 			port_created_listener = undefined;
 			port_removed_listener = undefined;
@@ -50,7 +58,7 @@
 			if (_initialize) _player.initialize();
 			
 			__.players.set(_port_index, _player);
-			__.IB.log("player created on port index: " + string(_port_index), IB_LOG_FLAG.GAME);
+			log("player created on port index: " + string(_port_index));
 		
 			return _player;
 		};
@@ -60,7 +68,7 @@
 			__.players.remove(_port_index);
 		
 			if (_destroy) _player.destroy();
-			__.IB.log("player removed from port index: " + string(_port_index), IB_LOG_FLAG.GAME);
+			log("player removed from port index: " + string(_port_index));
 		
 			return _player;
 		};

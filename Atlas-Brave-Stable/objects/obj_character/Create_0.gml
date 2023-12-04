@@ -17,6 +17,9 @@
 	#region meta/info
 	
 		// public
+		log		   = function(_string, _log_flags = IB_LOG_FLAG.NONE) {
+			__.IB.log(_string, IB_LOG_FLAG.CHARACTER & _log_flags);	
+		};
 		get_config = function() {
 			return __.meta.config;
 		};
@@ -75,11 +78,11 @@
 			
 		// events 
 		on_initialize(function() {
-			__.IB.log("stats initialize", IB_LOG_FLAG.CHARACTER);
+			log("stats initialize");
 		});
 		on_cleanup   (function() {
 			__.meta.stats.cleanup();
-			__.IB.log("stats cleanup", IB_LOG_FLAG.CHARACTER);
+			log("stats cleanup");
 		});
 	
 	#endregion
@@ -96,7 +99,7 @@
 			   //cpu_activate(_player == undefined);
 			
 			var _port_index = _player != undefined ? _player.input_get_port_index() : -1;
-			__.IB.log("set player: " + string(_port_index), IB_LOG_FLAG.CHARACTER);
+			log("set player: " + string(_port_index));
 			
 			return self;
 		};
@@ -192,7 +195,7 @@
 		input_activate							 = function(_active = true) {
 			if (_active) {
 				__.input.enabled = true;	
-				__.IB.log("activated input", IB_LOG_FLAG.CHARACTER);
+				log("activated input");
 			}
 			else {
 				input_deactivate();
@@ -201,7 +204,7 @@
 		};
 		input_deactivate						 = function() {
 			__.input.enabled = false;
-			__.IB.log("deactivated input", IB_LOG_FLAG.CHARACTER);
+			log("deactivated input");
 			return self;
 		};
 		input_get_devices						 = function() {
@@ -233,12 +236,12 @@
 		// input:lock
 		input_lock_set							 = function(_lock_name, _lock_time = -1) {
 			__.input.lock.set_lock(_lock_name, _lock_time);
-			__.IB.log("input lock set: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("input lock set: " + _lock_name);
 			return self;
 		};
 		input_lock_remove						 = function(_lock_name) {
 			__.input.lock.remove_lock(_lock_name);
-			__.IB.log("input lock remove: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("input lock remove: " + _lock_name);
 			return self;
 		};
 		input_lock_is_locked					 = function() {
@@ -293,12 +296,12 @@
 		};
 		input_move_vector_lock_set				 = function(_lock_name, _lock_time = -1) {
 			__.input.move_vector_lock.set_lock(_lock_name, _lock_time);
-			__.IB.log("vector_input lock set: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("vector_input lock set: " + _lock_name);
 			return self;
 		};
 		input_move_vector_lock_remove			 = function(_lock_name) {
 			__.input.move_vector_lock.remove_lock(_lock_name);
-			__.IB.log("vector_input lock remove: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("vector_input lock remove: " + _lock_name);
 			return self;
 		};
 		input_move_vector_lock_is_locked		 = function() {
@@ -353,12 +356,12 @@
 		};
 		input_aim_vector_lock_set				 = function(_lock_name, _lock_time = -1) {
 			__.input.aim_vector_lock.set_lock(_lock_name, _lock_time);
-			__.IB.log("vector_input lock set: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("vector_input lock set: " + _lock_name);
 			return self;
 		};
 		input_aim_vector_lock_reaim				 = function(_lock_name) {
 			__.input.aim_vector_lock.reaim_lock(_lock_name);
-			__.IB.log("vector_input lock reaim: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("vector_input lock reaim: " + _lock_name);
 			return self;
 		};
 		input_aim_vector_lock_is_locked			 = function() {
@@ -905,7 +908,7 @@
 				var _gain  =  1;
 				var _pitch = _mod_pitch ? random_range(_pitch_min, _pitch_max) : 1;
 					
-				__.IB.log("audio play: " + audio_get_name(_audio_index), IB_LOG_FLAG.CHARACTER);
+				log("audio play: " + audio_get_name(_audio_index));
 				return audio_play_sound_on(__.audio.emitter, _audio_index, false, 0, _gain, 0, _pitch);
 			}
 			return undefined;
@@ -975,7 +978,7 @@
 		});
 		on_cleanup(function() {
 			audio_emitter_free(__.audio.emitter);
-			__.IB.log("audio emitter free", IB_LOG_FLAG.CHARACTER);
+			log("audio emitter free");
 		});
 	
 	#endregion
@@ -1020,22 +1023,22 @@
 		};
 		move_velocity_add_scalar		  = function(_scalar_name, _value, _duration = -1) {
 			__.movement.controller.velocity_scalar_new_modifier_scalar(_scalar_name, _value, _duration);
-			__.IB.log("move_velocity_add_scalar: " + _scalar_name, IB_LOG_FLAG.CHARACTER);
+			log("move_velocity_add_scalar: " + _scalar_name);
 			return self;
 		};
 		move_velocity_remove_scalar		  = function(_scalar_name) {
 			__.movement.controller.velocity_scalar_remove_modifier(_scalar_name);
-			__.IB.log("move_velocity_remove_scalar: " + _scalar_name, IB_LOG_FLAG.CHARACTER);
+			log("move_velocity_remove_scalar: " + _scalar_name);
 			return self;
 		};
 		move_velocity_lock_set			  = function(_lock_name, _lock_duration = -1) {
 			__.movement.controller.velocity_lock_set(_lock_name, _lock_duration);
-			__.IB.log("move_velocity_lock_set: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("move_velocity_lock_set: " + _lock_name);
 			return self;
 		};
 		move_velocity_lock_remove		  = function(_lock_name) {
 			__.movement.controller.velocity_lock_remove(_lock_name);
-			__.IB.log("move_velocity_lock_remove: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("move_velocity_lock_remove: " + _lock_name);
 			return self;
 		};
 		move_velocity_max_out			  = function(_dir) {
@@ -1066,11 +1069,11 @@
 				__movespeed_init(_move_data.movespeeds);	
 			};
 			__.movement.controller.initialize();
-			__.IB.log("movement initialized", IB_LOG_FLAG.CHARACTER);
+			log("movement initialized");
 		});
 		on_cleanup   (function() {
 			__.movement.controller.cleanup();
-			__.IB.log("movement cleanup", IB_LOG_FLAG.CHARACTER);
+			log("movement cleanup");
 		});
 		
 	#endregion
@@ -1083,12 +1086,12 @@
 		// public
 		life_deplete	  = function(_amount = life_get_count()) {
 			__.life.resource.deplete(_amount);
-			__.IB.log("life depleted: " + string(_amount), IB_LOG_FLAG.CHARACTER);
+			log("life depleted: " + string(_amount));
 			return self;
 		};
 		life_restore	  = function(_amount = life_get_space()) {
 			__.life.resource.restore(_amount);
-			__.IB.log("life restored: " + string(_amount), IB_LOG_FLAG.CHARACTER);
+			log("life restored: " + string(_amount));
 			return self;
 		};
 		life_get_count	  = function() {
@@ -1112,7 +1115,7 @@
 				count:	  _self.__.meta.data.health,
 			});
 			resource.on_empty(method(_self, function() {
-				__.IB.log("life.resource empty", IB_LOG_FLAG.CHARACTER);
+				log("life.resource empty");
 				death();
 			}));
 		};
@@ -1120,14 +1123,14 @@
 		// events
 		on_initialize(function() {
 			__.life.resource.initialize();
-			__.IB.log("life resource initialized", IB_LOG_FLAG.CHARACTER);
+			log("life resource initialized");
 		});
 		on_update	 (function() {
 			__.life.resource.update();
 		});
 		on_cleanup	 (function() {
 			__.life.resource.cleanup();
-			__.IB.log("life resource cleanup", IB_LOG_FLAG.CHARACTER);
+			log("life resource cleanup");
 		});
 	
 	#endregion
@@ -1136,12 +1139,12 @@
 		// public
 		armor_deplete	   = function(_amount = armor_get_count()) {
 			__.armor.resource.deplete(_amount);
-			__.IB.log("armor depleted: " + string(_amount), IB_LOG_FLAG.CHARACTER);
+			log("armor depleted: " + string(_amount));
 			return self;
 		};
 		armor_restore	   = function(_amount = armor_get_space()) {
 			__.armor.resource.restore(_amount);
-			__.IB.log("armor restored: " + string(_amount), IB_LOG_FLAG.CHARACTER);
+			log("armor restored: " + string(_amount));
 			return self;
 		};
 		armor_get_count	   = function() {
@@ -1169,14 +1172,14 @@
 		// events
 		on_initialize(function() {
 			__.armor.resource.initialize();
-			__.IB.log("armor resource initialized", IB_LOG_FLAG.CHARACTER);
+			log("armor resource initialized");
 		});
 		on_update	 (function() {
 			__.armor.resource.update();
 		});
 		on_cleanup	 (function() {
 			__.armor.resource.cleanup();
-			__.IB.log("armor resource cleanup", IB_LOG_FLAG.CHARACTER);
+			log("armor resource cleanup");
 		});
 	
 	#endregion
@@ -1224,12 +1227,7 @@
 			__.stats.move_speed.initialize();
 			__.stats.attack_speed.initialize();
 			__.stats.attack_range.initialize();
-			
-			__.IB.log("stat damage initialized",		IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat defense initialized",		IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat move_speed initialized",	IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat attack_speed initialized", IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat attack_range initialized", IB_LOG_FLAG.CHARACTER);
+			log("stats initialized");
 		});
 		on_update	 (function() {
 			__.stats.damage.update();
@@ -1244,12 +1242,7 @@
 			__.stats.move_speed.cleanup();
 			__.stats.attack_speed.cleanup();
 			__.stats.attack_range.cleanup();
-			
-			__.IB.log("stat damage cleanup",		IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat defense cleanup",		IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat move_speed cleanup",	IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat attack_speed cleanup", IB_LOG_FLAG.CHARACTER);
-			__.IB.log("stat attack_range cleanup", IB_LOG_FLAG.CHARACTER);
+			log("stats cleaned up");
 		});
 	
 	#endregion
@@ -1487,7 +1480,7 @@
 		ability_start			  = function(_ability_type) {
 			var _ability  = ability_get(_ability_type);
 			if (_ability != undefined) {
-				__.IB.log("ability " + _ability_type + " start", IB_LOG_FLAG.CHARACTER);
+				log("ability " + _ability_type + " start");
 				__.ability.set_current(_ability_type);
 				__.state.fsm.change("ability");
 			}
@@ -1496,7 +1489,7 @@
 		ability_complete		  = function(_success = undefined, _ability_type = ability_get_current_type(), _return_state = "idle", _cooldown_start = true, _execute_callbacks = true) {
 			var _ability  = ability_get(_ability_type);
 			if (_ability != undefined) {
-				__.IB.log("ability " + _ability_type + " complete", IB_LOG_FLAG.CHARACTER);
+				log("ability " + _ability_type + " complete");
 				_ability.complete(_success, _cooldown_start, _execute_callbacks);
 				__.state.fsm.change(_return_state);
 			}
@@ -1520,7 +1513,7 @@
 		};
 		ability_speed_mult_set	  = function(_ability_type, _multiplier) {
 			__.ability[$ _ability_type].speed_mult.set(_multiplier);
-			__.IB.log("ability " + _ability_type + " speed mult set: " + string(_multiplier), IB_LOG_FLAG.CHARACTER);
+			log("ability " + _ability_type + " speed mult set: " + string(_multiplier));
 			return self;
 		};
 		
@@ -1539,7 +1532,7 @@
 					__.ability.current_type	= "";
 					__.ability.current		= undefined;
 					
-					__.IB.log("ability cleared current", IB_LOG_FLAG.CHARACTER);
+					log("ability cleared current");
 				}
 			});
 			set_current			= method(_self, function(_ability_type) {
@@ -1549,7 +1542,7 @@
 				
 				__.ability.current		= _ability;
 				__.ability.current_type	= _ability_type;
-				__.IB.log("ability set current: " + _ability_name, IB_LOG_FLAG.CHARACTER);
+				log("ability set current: " + _ability_name);
 			});
 			on_phase_change		= method(_self, function(_char, _ability, _phase, _data) {
 				_char.sprite_change(_phase.get_sprite_key(), 0);
@@ -1634,25 +1627,23 @@
 			
 			if (__.ability.basic.ability	 != undefined) {
 				__.ability.basic.ability.initialize();
-				__.IB.log("ability basic initialized", IB_LOG_FLAG.CHARACTER);
 			}
 			if (__.ability.defense.ability   != undefined) {
 				__.ability.defense.ability.initialize();
-				__.IB.log("ability defense initialized", IB_LOG_FLAG.CHARACTER);
 			}
 			if (__.ability.primary.ability   != undefined) {
 				__.ability.primary.ability.initialize();
-				__.IB.log("ability primary initialized", IB_LOG_FLAG.CHARACTER);
 			}
 			if (__.ability.secondary.ability != undefined) {
 				__.ability.secondary.ability.initialize();
-				__.IB.log("ability secondary initialized", IB_LOG_FLAG.CHARACTER);
 			}
 				
 			__.ability.basic.speed_mult.initialize();
 			__.ability.defense.speed_mult.initialize();
 			__.ability.primary.speed_mult.initialize();
 			__.ability.secondary.speed_mult.initialize();
+			
+			log("ability initialized");
 		});
 		on_update	 (function() {
 			__.ability.lock.update();
@@ -1663,25 +1654,24 @@
 			
 			if (__.ability.basic.ability	 != undefined) {
 				__.ability.basic.ability.cleanup();
-				__.IB.log("ability basic cleanup", IB_LOG_FLAG.CHARACTER);
+				
 			}
 			if (__.ability.defense.ability   != undefined) {
 				__.ability.defense.ability.cleanup();
-				__.IB.log("ability defense cleanup", IB_LOG_FLAG.CHARACTER);
 			}
 			if (__.ability.primary.ability   != undefined) {
 				__.ability.primary.ability.cleanup();
-				__.IB.log("ability primary cleanup", IB_LOG_FLAG.CHARACTER);
 			}
 			if (__.ability.secondary.ability != undefined) {
 				__.ability.secondary.ability.cleanup();
-				__.IB.log("ability secondary cleanup", IB_LOG_FLAG.CHARACTER);
 			}
 			
 			__.ability.basic.speed_mult.cleanup();
 			__.ability.defense.speed_mult.cleanup();
 			__.ability.primary.speed_mult.cleanup();
 			__.ability.secondary.speed_mult.cleanup();
+			
+			log("ability cleaned up");
 		});
 	
 	#endregion
@@ -1720,7 +1710,7 @@
 				_hitbox.destroy();
 			}
 			__.hitbox.instances.remove(_name);
-			__.IB.log("hitbox destroyed: " + _name, IB_LOG_FLAG.CHARACTER);
+			log("hitbox destroyed: " + _name);
 			return self;
 		};
 		hitbox_get			= function(_name) {
@@ -1758,11 +1748,11 @@
 		// events
 		on_initialize(function() {
 			__.hurtbox.instance.initialize();
-			__.IB.log("hurtbox initialized", IB_LOG_FLAG.CHARACTER);
+			log("hurtbox initialized");
 		});
 		on_cleanup	 (function() {
 			__.hurtbox.instance.destroy();
-			__.IB.log("hurtbox destroyed", IB_LOG_FLAG.CHARACTER);
+			log("hurtbox destroyed");
 		});
 	
 	#endregion
@@ -1862,7 +1852,7 @@
 	
 		// public 
 		death	= function() {
-			__.IB.log("death", IB_LOG_FLAG.CHARACTER);
+			log("death");
 			audio_play(audio_get_death_index());
 			__.state.fsm.change("death");
 			// player.character_death() handled on_cleanup
@@ -1882,7 +1872,7 @@
 		on_cleanup(function() {
 			if (__.player.instance != undefined) {
 				__.player.instance.__.character.death(self);
-				__.IB.log("registered character_death", IB_LOG_FLAG.CHARACTER);
+				log("registered character_death");
 			}
 		});
 	
@@ -1911,12 +1901,12 @@
 		};
 		knockback_lock_set		   = function(_lock_name, _duration = -1) {
 			__.knockback.lock_stack.set_lock(_lock_name, _duration);
-			__.IB.log("knockback_lock_set: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("knockback_lock_set: " + _lock_name);
 			return self;
 		};
 		knockback_lock_remove	   = function(_lock_name) {
 			__.knockback.lock_stack.remove_lock(_lock_name);
-			__.IB.log("knockback_lock_remove: " + _lock_name, IB_LOG_FLAG.CHARACTER);
+			log("knockback_lock_remove: " + _lock_name);
 			return self;
 		};
 		knockback_lock_is_locked   = function() {
@@ -1936,7 +1926,7 @@
 		// events
 		on_initialize(function() {
 			__.knockback.lock_stack.initialize();
-			__.IB.log("knockback_lock initialize", IB_LOG_FLAG.CHARACTER);
+			log("knockback_lock initialize");
 		});
 		on_update	 (function() {
 			__.knockback.lock_stack.update();
@@ -1948,7 +1938,7 @@
 		});
 		on_cleanup	 (function() {
 			__.knockback.lock_stack.cleanup();
-			__.IB.log("knockback_lock cleanup", IB_LOG_FLAG.CHARACTER);
+			log("knockback_lock cleanup");
 		});
 	
 	#endregion
@@ -1962,7 +1952,7 @@
 			});
 			__.aura.instances.set(_name, _aura);
 			_aura.initialize();
-			__.IB.log("aura created: " + _name, IB_LOG_FLAG.CHARACTER);
+			log("aura created: " + _name);
 			return _aura;
 		};
 		aura_destroy = function(_name) {
@@ -1970,7 +1960,7 @@
 			if (_aura != undefined) {
 				__.aura.instances.remove(_name);
 				_aura.destroy();
-				__.IB.log("aura destroyed: " + _name, IB_LOG_FLAG.CHARACTER);
+				log("aura destroyed: " + _name);
 			}
 			return self;
 		};
@@ -2024,17 +2014,17 @@
 		};
 		smear_destroy	 = function(_smear_name) {
 			__.smear.controller.destroy_effect(_smear_name);
-			__.IB.log("smear destroyed: " + _smear_name, IB_LOG_FLAG.CHARACTER);
+			log("smear destroyed: " + _smear_name);
 			return self;
 		};
 		smear_start		 = function(_smear_name, _frame_index = 0, _on_stop_callback = undefined) {
 			__.smear.controller.start_effect(_smear_name, _frame_index, _on_stop_callback);
-			__.IB.log("effect started: " + _smear_name, IB_LOG_FLAG.CHARACTER);
+			log("effect started: " + _smear_name);
 			return self;
 		};
 		smear_stop		 = function(_smear_name, _execute_callbacks = true) {
 			__.smear.controller.stop_effect(_smear_name, _execute_callbacks);
-			__.IB.log("smear stopped: " + _smear_name, IB_LOG_FLAG.CHARACTER);
+			log("smear stopped: " + _smear_name);
 			return self;
 		};
 		smear_get_sprite = function(_ability = ability_get_current()) {
@@ -2050,7 +2040,7 @@
 		// events
 		on_initialize(function() {
 			__.smear.controller.initialize();
-			__.IB.log("smear controller initialized", IB_LOG_FLAG.CHARACTER);
+			log("smear controller initialized");
 		});
 		on_update	 (function() {
 			__.smear.controller.update();
@@ -2065,7 +2055,7 @@
 		});
 		on_cleanup	 (function() {
 			__ .smear.controller.cleanup();
-			__.IB.log("smear controller cleanup", IB_LOG_FLAG.CHARACTER);
+			log("smear controller cleanup");
 		});
 		
 	#endregion	
@@ -2085,7 +2075,7 @@
 		};
 		effect_destroy			= function(_effect_name) {
 			__.effect.controller.destroy_effect(_effect_name);
-			__.IB.log("effect destroyed: " + _effect_name, IB_LOG_FLAG.CHARACTER);
+			log("effect destroyed: " + _effect_name);
 			return self;
 		};
 		effect_start			= function(_effect_name, _frame_index = 0, _on_stop_callback = undefined) {
@@ -2112,7 +2102,7 @@
 		// events
 		on_initialize(function() {
 			__.effect.controller.initialize();
-			__.IB.log("effect controller initialized", IB_LOG_FLAG.CHARACTER);
+			log("effect controller initialized");
 		});
 		on_update	 (function() {
 			__.effect.controller.update();
@@ -2132,7 +2122,7 @@
 		});
 		on_cleanup	 (function() {
 			__ .effect.controller.cleanup();
-			__.IB.log("effect controller cleanup", IB_LOG_FLAG.CHARACTER);
+			log("effect controller cleanup");
 		});
 	
 	#endregion
@@ -2152,23 +2142,23 @@
 			return _tween;
 		};
 		tween_destroy		= function(_tween_name) {
-			__.IB.log("tween destroyed: " + _tween_name, IB_LOG_FLAG.CHARACTER);
+			log("tween destroyed: " + _tween_name);
 			__.tween.controller.destroy_tween(_tween_name);
 			return self;
 		};
 		tween_start			= function(_tween_name, _t = 0, _on_stop_callback = undefined) {
 			__.tween.controller.start_tween(_tween_name, _t, _on_stop_callback);
-			__.IB.log("tween started: " + _tween_name, IB_LOG_FLAG.CHARACTER);
+			log("tween started: " + _tween_name);
 			return self;
 		};
 		tween_stop			= function(_tween_name, _execute_callbacks = true) {
 			__.tween.controller.stop_tween(_tween_name, _execute_callbacks);
-			__.IB.log("tween stopped: " + _tween_name, IB_LOG_FLAG.CHARACTER);
+			log("tween stopped: " + _tween_name);
 			return self;
 		};
 		tween_pause			= function(_tween_name) {			
 			__.tween.controller.pause_tween(_tween_name);
-			__.IB.log("tween paused: " + _tween_name, IB_LOG_FLAG.CHARACTER);
+			log("tween paused: " + _tween_name);
 			return self;
 		};
 		tween_get_value		= function(_tween_name) {
@@ -2187,14 +2177,14 @@
 		// events
 		on_initialize(function() {
 			__.tween.controller.initialize();
-			__.IB.log("tween controller initialized", IB_LOG_FLAG.CHARACTER);
+			log("tween controller initialized");
 		});
 		on_update	 (function() {
 			__.tween.controller.update();
 		});
 		on_cleanup	 (function() {
 			__.tween.controller.cleanup();
-			__.IB.log("tween controller cleanup", IB_LOG_FLAG.CHARACTER);
+			log("tween controller cleanup");
 		});
 	
 	#endregion

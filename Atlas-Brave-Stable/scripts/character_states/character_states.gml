@@ -34,7 +34,7 @@
 			//                                      //
 			return {
 				enter:		   function() {
-					__.IB.log("state moving enter", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+					log("state moving enter", IB_LOG_FLAG.STATE);
 					__.state.fsm.inherit();
 					sprite_change("Move");
 				},
@@ -79,7 +79,7 @@
 				},
 				leave:		   function() {
 					__.state.fsm.inherit();
-					__.IB.log("state moving leave", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+					log("state moving leave", IB_LOG_FLAG.STATE);
 				},	
 				animation_end: function() {
 					__.state.fsm.inherit();
@@ -96,7 +96,7 @@
 					return {
 						enter:		   function() {
 							__.state.fsm.inherit();	
-							__.IB.log("state idle enter", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state idle enter", IB_LOG_FLAG.STATE);
 							sprite_change("Idle");
 						},
 						begin_step:    function() {
@@ -117,7 +117,7 @@
 						},
 						leave:		   function() {
 							__.state.fsm.inherit();
-							__.IB.log("state idle leave", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state idle leave", IB_LOG_FLAG.STATE);
 						},
 						animation_end: function() {
 							__.state.fsm.inherit();
@@ -134,7 +134,7 @@
 					return {
 						enter:		   function() {
 							__.state.fsm.inherit();	
-							__.IB.log("state move enter", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state move enter", IB_LOG_FLAG.STATE);
 							sprite_change("Move");
 						},
 						begin_step:    function() {
@@ -155,7 +155,7 @@
 						},
 						leave:		   function() {
 							__.state.fsm.inherit();
-							__.IB.log("state move leave", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state move leave", IB_LOG_FLAG.STATE);
 						},
 						animation_end: function() {
 							__.state.fsm.inherit();
@@ -207,7 +207,7 @@
 						enter:		   function() {
 							__.state.fsm.inherit();
 							sprite_change("Hurt", 0);
-							__.IB.log("state hurt enter", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state hurt enter", IB_LOG_FLAG.STATE);
 						},
 						begin_step:    function() {
 							__.state.fsm.inherit();
@@ -226,7 +226,7 @@
 						},
 						leave:		   function() {
 							__.state.fsm.inherit();
-							__.IB.log("state hurt leave", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state hurt leave", IB_LOG_FLAG.STATE);
 						},
 						animation_end: function() {
 							__.state.fsm.inherit();
@@ -246,7 +246,7 @@
 							__.death.is_dead = true;
 							sprite_change("Death", 0);
 							BROADCAST("character_death", { instance: self });
-							__.IB.log("state death enter", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state death enter", IB_LOG_FLAG.STATE);
 						},
 						begin_step:    function() {
 							__.state.fsm.inherit();
@@ -268,7 +268,7 @@
 						},
 						leave:		   function() {
 							__.state.fsm.inherit();
-							__.IB.log("state death leave", IB_LOG_FLAG.CHARACTER & IB_LOG_FLAG.STATE);
+							log("state death leave", IB_LOG_FLAG.STATE);
 						},
 						animation_end: function() {
 							__.state.fsm.inherit();

@@ -25,7 +25,7 @@
 			_profile.create(_profile_name, _port_index);
 			team_reset();
 			
-			__.IB.log("profile created: " + _profile_name, IB_LOG_FLAG.PLAYER);
+			log("profile created: " + _profile_name);
 			return self;
 		};
 		profile_load   = function(_profile_name) {
@@ -35,7 +35,7 @@
 			_profile.load_from_disk(_profile_name);
 			team_reset();
 			
-			__.IB.log("profile loaded: " + _profile_name, IB_LOG_FLAG.PLAYER);
+			log("profile loaded: " + _profile_name);
 			return self;
 		};
 			
@@ -320,17 +320,17 @@
 		// events
 		on_initialize(function() {
 			__.panel.instance.initialize();
-			__.IB.log("initialized", IB_LOG_FLAG.PLAYER);
+			log("initialized");
 		});
 		on_activate  (function() {
 			__.panel.instance.activate();
 			__.panel.instance.show();
-			__.IB.log("activated", IB_LOG_FLAG.PLAYER);
+			log("activated");
 		});
 		on_deactivate(function() {
 			__.panel.instance.hide();
 			__.panel.instance.deactivate();
-			__.IB.log("deactivated", IB_LOG_FLAG.PLAYER);
+			log("deactivated");
 		});
 		on_update	 (function() {
 			__.panel.instance.update();
@@ -362,7 +362,7 @@
 		});
 		on_cleanup	 (function() {
 			__.panel.instance.cleanup();
-			__.IB.log("cleaned up", IB_LOG_FLAG.PLAYER);
+			log("cleaned up");
 		});
 	
 	#endregion
@@ -381,7 +381,7 @@
 			var _char = __.character.factory.create(_uid, _x, _y, _config);
 			__.character.instance = _char;
 			__.character.instance.initialize();
-			__.IB.log("character created of uid: " + string(_uid), IB_LOG_FLAG.PLAYER);
+			log("character created of uid: " + string(_uid));
 			
 			return _char;
 		};
@@ -390,19 +390,19 @@
 		};
 		character_set_selected	  = function(_character_uid) {
 			__.character.selected_type = _character_uid;
-			__.IB.log("character selected set to: " + string(_character_uid), IB_LOG_FLAG.PLAYER);
+			log("character selected set to: " + string(_character_uid));
 			return self;
 		};
 		character_gain_possession = function(_instance) {
 			__.character.factory.store(_instance.get_uid(), _instance);
 			_instance.player_set(self);
-			__.IB.log("character gain possession: " + string(_instance.id), IB_LOG_FLAG.PLAYER);
+			log("character gain possession: " + string(_instance.id));
 			return self;
 		};
 		character_lose_possession = function(_instance) {
 			__.character.factory.remove(_instance.get_uid(), _instance);
 			_instance.player_set(undefined);
-			__.IB.log("character lose possession: " + string(_instance.id), IB_LOG_FLAG.PLAYER);
+			log("character lose possession: " + string(_instance.id));
 			return self;
 		};
 		
@@ -412,7 +412,7 @@
 			death		  = method(_self, function(_instance) {
 				__.character.factory.destroy(_instance.get_uid(), _instance);
 				__.character.instance = undefined;
-				__.IB.log("character death: " + string(_instance.id), IB_LOG_FLAG.PLAYER);
+				log("character death: " + string(_instance.id));
 				return self
 			});
 			instance	  = undefined;

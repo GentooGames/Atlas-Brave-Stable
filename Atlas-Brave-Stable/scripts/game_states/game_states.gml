@@ -1,4 +1,4 @@
-	
+
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//  ______   ______   __    __   ______    //
 	// /\  ___\ /\  __ \ /\ "-./  \ /\  ___\   //
@@ -29,7 +29,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_begin enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_begin enter", IB_LOG_FLAG.STATE);
 							__.state.fsm.change("create_controllers");
 						},
 						begin_step: function() {
@@ -43,7 +43,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_begin leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_begin leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -51,7 +51,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_idle enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_idle enter", IB_LOG_FLAG.STATE);
 						},
 						begin_step: function() {
 							__.state.fsm.inherit();
@@ -64,7 +64,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_idle leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_idle leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -72,7 +72,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_create_controllers enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_create_controllers enter", IB_LOG_FLAG.STATE);
 							
 							iceberg.controller_create(objc_radio);
 							iceberg.controller_create(objc_difficulty);
@@ -100,7 +100,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_create_controllers leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_create_controllers leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -108,7 +108,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_load_sprite_data enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_load_sprite_data enter", IB_LOG_FLAG.STATE);
 							
 							if (file_exists(CHARACTER_SPRITE_DATA_FILE_PATH)) {
 								var _buffer = buffer_load(CHARACTER_SPRITE_DATA_FILE_PATH);
@@ -129,7 +129,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_load_sprite_data leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_load_sprite_data leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -137,7 +137,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_init_global_data enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_init_global_data enter", IB_LOG_FLAG.STATE);
 	
 							global.ability_config = {};
 							#macro ABILITY_CONFIG global.ability_config
@@ -159,7 +159,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_init_global_data leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_init_global_data leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -167,7 +167,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_init_controllers enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_init_controllers enter", IB_LOG_FLAG.STATE);
 							
 							objc_radio.initialize();
 							objc_difficulty.initialize();
@@ -195,7 +195,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_init_controllers leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_init_controllers leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
@@ -203,7 +203,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_ready enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_ready enter", IB_LOG_FLAG.STATE);
 						},
 						begin_step: function() {
 							__.state.fsm.inherit();
@@ -217,7 +217,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_ready leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_ready leave", IB_LOG_FLAG.STATE);
 							room_goto_next();
 						},
 					};
@@ -226,7 +226,7 @@
 					return {
 						enter:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_running enter", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_running enter", IB_LOG_FLAG.STATE);
 						},
 						begin_step: function() {
 							__.state.fsm.inherit();
@@ -239,7 +239,7 @@
 						},
 						leave:		function() {
 							__.state.fsm.inherit();
-							__.IB.log("game_state_running leave", IB_LOG_FLAG.GAME & IB_LOG_FLAG.STATE);
+							log("game_state_running leave", IB_LOG_FLAG.STATE);
 						},
 					};
 				};
