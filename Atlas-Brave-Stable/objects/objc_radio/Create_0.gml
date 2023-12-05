@@ -46,3 +46,6 @@
 		__.radio.cleanup();
 	});
 	
+	////////////////////////////////
+	
+	__.IB.log("objc_radio created");
