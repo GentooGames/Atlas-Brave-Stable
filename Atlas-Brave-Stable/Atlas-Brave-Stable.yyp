@@ -142,7 +142,7 @@
     {"id":{"name":"spr_character_select_bg_elements","path":"sprites/spr_character_select_bg_elements/spr_character_select_bg_elements.yy",},"order":0,},
     {"id":{"name":"IB_Sprite_Pixel_1x1_White_Precise","path":"sprites/IB_Sprite_Pixel_1x1_White_Precise/IB_Sprite_Pixel_1x1_White_Precise.yy",},"order":2,},
     {"id":{"name":"objc_world","path":"objects/objc_world/objc_world.yy",},"order":0,},
-    {"id":{"name":"RADIO","path":"scripts/RADIO/RADIO.yy",},"order":2,},
+    {"id":{"name":"EVENTS","path":"scripts/EVENTS/EVENTS.yy",},"order":2,},
     {"id":{"name":"IB_MoveController_Platformer_Curves","path":"animcurves/IB_MoveController_Platformer_Curves/IB_MoveController_Platformer_Curves.yy",},"order":5,},
     {"id":{"name":"_IB_Sprite_Platformer_Solid_Circle","path":"sprites/_IB_Sprite_Platformer_Solid_Circle/_IB_Sprite_Platformer_Solid_Circle.yy",},"order":3,},
     {"id":{"name":"IB_AnimationCurve","path":"scripts/IB_AnimationCurve/IB_AnimationCurve.yy",},"order":3,},

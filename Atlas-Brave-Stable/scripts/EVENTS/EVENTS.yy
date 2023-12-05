@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "RADIO",
+  "name": "EVENTS",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

@@ -14,12 +14,15 @@
 	// public
 	broadcast	= function(_event_name, _payload = undefined) {
 		__.radio.broadcast(_event_name, _payload);
+		__.IB.log("event broadcasted: " + _event_name, IB_LOG_FLAG.RADIO);
 		return self;
 	};
 	subscribe	= function(_event_name, _callback, _weak_ref = true) {
+		__.IB.log("event subscribed: " + _event_name, IB_LOG_FLAG.RADIO);
 		return __.radio.subscribe(_event_name, _callback, _weak_ref);
 	};
 	unsubscribe = function(_subscriber, _force = true) {
+		__.IB.log("event unsubscribed", IB_LOG_FLAG.RADIO);
 		__.radio.unsubscribe(_subscriber, _force);
 		return self;
 	};

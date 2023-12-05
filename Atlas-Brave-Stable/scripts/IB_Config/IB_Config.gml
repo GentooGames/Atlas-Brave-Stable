@@ -11,14 +11,15 @@
 		NONE		 = 1 << 0,
 		ALL			 = 1 << 1,
 		INSTANCES	 = 1 << 2,
-		OBJECTS	 = 1 << 3,
+		OBJECTS		 = 1 << 3,
 		CONSTRUCTORS = 1 << 4,
 		INPUT		 = 1 << 5,
 		STATE		 = 1 << 6,
 		GAME		 = 1 << 7,
 		CAMERA		 = 1 << 8,
 		PLAYER		 = 1 << 9,
-		CHARACTER	 = 1 << 10,
+		RADIO		 = 1 << 10,
+		CHARACTER	 = 1 << 11,
 	};
 	
 	global.iceberg_config = {
