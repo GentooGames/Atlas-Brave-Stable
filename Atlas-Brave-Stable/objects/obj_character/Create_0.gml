@@ -2230,3 +2230,7 @@
 		if (keyboard_check(ord("U"))) position_adjust_z( 1);	
 	});
 	
+	////////////////////////////
+		
+	log("obj_character created");
+	

@@ -16,5 +16,5 @@
 	IB_Behavior_Render();
 	IB_Behavior_Room();
 		
-	__.IB.log("base created");
+	__.IB.log("IB_Object_Base created");
 	

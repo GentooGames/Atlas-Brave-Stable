@@ -121,3 +121,7 @@
 	
 	#endregion
 	
+	////////////////////////////
+	
+	log("IB_Object_Game created");
+	

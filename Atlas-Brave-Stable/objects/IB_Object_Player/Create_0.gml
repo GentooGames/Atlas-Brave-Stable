@@ -140,6 +140,7 @@
 	
 	#endregion
 	
+	////////////////////////////////
 	
-	
+	log("IB_Object_Player created");
 	

@@ -20,5 +20,5 @@
 	IB_Behavior_Depth();
 	IB_Behavior_Render_Ext();
 	
-	__.IB.log("entity created");
+	__.IB.log("IB_Object_Entity created");
 	
