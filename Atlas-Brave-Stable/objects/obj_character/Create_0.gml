@@ -963,13 +963,6 @@
 		__[$ "audio"] ??= {};
 		with (__.audio) {
 			emitter = audio_emitter_create();
-			
-			//	dyanmicaly construct array of sound indexes using character name
-			//	voice
-			//	hurt
-			//	death
-			
-			// need to account for character select scene global access
 		};
 		
 		// events
@@ -993,7 +986,6 @@
 		};
 										     
 		move_adjust_position_by_value	  = function(_value, _dir) {
-			//print(_value);
 			var _x_adjust = lengthdir_x(_value, _dir);
 			var _y_adjust = lengthdir_y(_value, _dir);
 			position_adjust_x(_x_adjust);
@@ -1065,7 +1057,7 @@
 			var _move_data = __.meta.config.movement;
 			with (__.movement.controller) {
 				__collision_objects_init(_move_data.collisions.objects);
-				//__moveset_init(_move_data.movesets);
+			//	__moveset_init(_move_data.movesets);
 				__movespeed_init(_move_data.movespeeds);	
 			};
 			__.movement.controller.initialize();
@@ -1312,11 +1304,11 @@
 			return undefined;
 		};
 		item_aquire	 = function(_item_instance) {
-			
+			//
 			// expecting an item_instance here acknowledges that there may 
 			// be unique variations applied to the item_instance that could 
 			// vary from the static defined global.item_data
-			
+			//
 			if (__.player.instance != undefined) {
 				var _added = __.player.instance.inventory_item_add(_item_instance.get_uid());
 				if (_added) {
@@ -1354,9 +1346,7 @@
 		with (__.item) {
 			// items
 			item_apply_stats					= method(_self, function(_item_instance) {
-				
-				
-				
+				// ...
 			});
 			item_purchase_check_interaction		= method(_self, function() {
 				if (__.item.item_colliding_count > 0
@@ -1818,7 +1808,6 @@
 				create_damage_text(_amount);
 				
 				// damage effect
-				
 				effect_create("__hurt_Impact_vfx", new IEffectConfig({
 					sprite_index:	spr_Impact_vfx,
 				}));
@@ -1855,7 +1844,7 @@
 			log("death");
 			audio_play(audio_get_death_index());
 			__.state.fsm.change("death");
-			// player.character_death() handled on_cleanup
+		//	player.character_death(); //handled on_cleanup
 			return self;	
 		};
 		is_dead = function() {
@@ -2064,8 +2053,8 @@
 		// public
 		effect_create			= function(_uid, _config = {}, _init = true) {
 			
-			_config[$ "x"]	??= position_get_x(); // add attack range and offset
-			_config[$ "y"]	??= position_get_y(); // add attack range and offset
+			_config[$ "x"] ??= position_get_x(); // add attack range and offset
+			_config[$ "y"] ??= position_get_y(); // add attack range and offset
 			
 			var _effect = __.effect.controller.create_effect(_uid, _config);
 			//_effect.set_angle(_config.angle);
@@ -2109,9 +2098,7 @@
 		});
 		on_render	 (function() {
 		//	__.effect.controller.for_each_effect(function(_effect) {
-		//		if (_effect.get_stick_to_owner_position()) {
-		//				
-		//		}
+		//		if (_effect.get_stick_to_owner_position()) {}
 		//	});
 			__.effect.controller.draw_effects(
 				position_get_x(), 
@@ -2133,8 +2120,8 @@
 			
 			if (_config.distance != undefined)	_config.value_end = _config.distance;
 			
-			_config[$ "var_name"	]	??=	"move_adjust_position_by_value";
-			_config[$ "var_owner"	]	??=	self;
+			_config[$ "var_name" ] ??= "move_adjust_position_by_value";
+			_config[$ "var_owner"] ??=  self;
 			
 			var _tween = __.tween.controller.create_tween(_tween_name, _config, _start);
 			if (_start) _tween.start();
