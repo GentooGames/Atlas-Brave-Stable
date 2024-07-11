@@ -1,4 +1,5 @@
 global.item_data = {}																																					
+/*
 global.item_data[$	""	] = {	name :	"",	rarity :	0,	cost :	15,	price :	15,	weight :	10,	health :	0,	damage :	0,	armor :	0,	attack_speed :	0,	move_speed :	0,	cooldown :	0,	crit :	0,	recipe :	[],	effects :	[false,false,false,false],	desc :	[],	active :	false,	active_cd :	false	};
 global.item_data[$	"Potion"	] = {	name :	"Potion",	rarity :	1,	cost :	15,	price :	15,	weight :	150,	health :	0,	damage :	0,	armor :	0,	attack_speed :	0,	move_speed :	0,	cooldown :	0,	crit :	0,	recipe :	[],	effects :	[false,false,false,false],	desc :	["Restore 60 HP. Health\n(limit 5)",],	active :	false,	active_cd :	false	};
 global.item_data[$	"Ruby Ring"	] = {	name :	"Ruby Ring",	rarity :	2,	cost :	0,	price :	30,	weight :	50,	health :	10,	damage :	0,	armor :	0,	attack_speed :	0,	move_speed :	0,	cooldown :	0,	crit :	0,	recipe :	[],	effects :	[false,false,false,false],	desc :	[],	active :	false,	active_cd :	false	};

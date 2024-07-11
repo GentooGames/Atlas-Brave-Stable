@@ -1,4 +1,5 @@
-global.enemy_data = {}																																			
+global.enemy_data = {}
+/*
 global.enemy_data[$	"Viper"	] = {	name :	"Viper"	, tier :	1	, enemy_type :	ENEMY_TYPE.FODDER	, sub_type :	ENEMY_SUBTYPE.BASIC	, xp :	4	, health :	90	, damage :	15	, attack_speed :	90	, move_speed :	55	, health_plv :	3	, damage_plv :	0.4	, attack_speed_plv :	0.5	, move_speed_plv :	0.5	, gold : 	1	, abilities :	["Viper Attack"]	, weights :	[0,]	};
 global.enemy_data[$	"Giblin Footman"	] = {	name :	"Giblin Footman"	, tier :	1	, enemy_type :	ENEMY_TYPE.MELEE	, sub_type :	ENEMY_SUBTYPE.BASIC	, xp :	5	, health :	110	, damage :	18	, attack_speed :	90	, move_speed :	60	, health_plv :	4	, damage_plv :	0.5	, attack_speed_plv :	0.5	, move_speed_plv :	0.6	, gold : 	1	, abilities :	["Giblin Footman Attack"]	, weights :	[0,]	};
 global.enemy_data[$	"Giblin Bomber"	] = {	name :	"Giblin Bomber"	, tier :	2	, enemy_type :	ENEMY_TYPE.RANGED	, sub_type :	ENEMY_SUBTYPE.BASIC	, xp :	8	, health :	90	, damage :	22	, attack_speed :	90	, move_speed :	50	, health_plv :	3	, damage_plv :	0.6	, attack_speed_plv :	0.5	, move_speed_plv :	0.4	, gold : 	2	, abilities :	["Giblin Bomber Attack"]	, weights :	[0,]	};

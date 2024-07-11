@@ -577,6 +577,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"zlib.ndll","CopyToMask":0,"filePath":"datafiles/GMLive",},
   ],
   "MetaData": {
-    "IDEVersion": "2023.0.0.22",
+    "IDEVersion": "2022.0.2.51",
   },
 }
